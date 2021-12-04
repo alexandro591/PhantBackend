@@ -16,8 +16,5 @@ export default function handler(req, res) {
     backgroundBubbleImage: `${environment.backendUrl}/images/chat.svg`,
   });
 
-  console.log(phantChatHTML);
-  console.log(javascript);
-
   res.send(javascript);
 }
