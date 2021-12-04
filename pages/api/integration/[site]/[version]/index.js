@@ -1,14 +1,13 @@
 const environment = require('../../../../../environment');
 
-const getHtmlFromTemplate = (version) => {
-  const htmlTemplate = require(`../../../../../public/integration/${version}/integration.handlebars.html`);
-  const cssUrl = `${environment.backendUrl}/integration/${version}/integration.handlebars.css`;
-  return htmlTemplate({ cssUrl });
-};
-
 export default function handler(req, res) {
-  const phantChatHTML = getHtmlFromTemplate(req.query.version);
+  const htmlTemplate = require(`../../../../../public/integration/${req.query.version}/integration.handlebars.html`);
   const jsTemplate = require(`../../../../../public/integration/${req.query.version}/integration.handlebars.js`);
+
+  const cssUrl = `${environment.backendUrl}/integration/${req.query.version}/integration.handlebars.css`;
+
+  const phantChatHTML = htmlTemplate({ cssUrl });
+
   const javascript = jsTemplate({
     site: req.query.site,
     chatAppUrl: environment.chatAppUrl,
