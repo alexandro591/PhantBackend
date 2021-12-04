@@ -11,7 +11,6 @@ export default function handler(req, res) {
   const cssUrl = `${backendUrl}/integration/${req.query.version}/integration.handlebars.css`;
 
   const phantChatHTML = htmlTemplate({ cssUrl });
-
   const javascript = jsTemplate({
     site: req.query.site,
     chatAppUrl: environment.chatAppUrl,
