@@ -1,0 +1,76 @@
+$z-index: 999999;
+$primary-color: #3f51b5;
+$border-radius-px: 20px;
+$head-foot-height: 10vh;
+$max-head-foot-height: 60px;
+$chat-height: 50vh;
+.hidden {
+  display: none;
+}
+
+.phant-bubble-chat {
+  position: fixed;
+  background: $primary-color;
+  background-size: cover;
+  bottom: 20px;
+  right: 20px;
+  height: 80px;
+  width: 80px;
+  border-radius: 100px;
+  box-shadow: 0 0 10px;
+  z-index: $z-index;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.phant-chat-app-head {
+  border-radius: $border-radius-px $border-radius-px 0 0;
+  right: 20px;
+  width: 100%;
+  height: $head-foot-height;
+  max-height: $max-head-foot-height;
+  z-index: $z-index;
+  border-bottom: 1px solid rgb(202, 202, 202);
+  background: $primary-color;
+}
+
+.phant-chat-app {
+  background-color: white;
+  width: 100%;
+  border-radius: 0 0 0 0;
+  border: none;
+  height: $chat-height;
+  z-index: $z-index;
+  transition: 0.5s;
+}
+
+.phant-chat-app-foot {
+  border-radius: 0 0 $border-radius-px $border-radius-px;
+  height: $head-foot-height;
+  max-height: $max-head-foot-height;
+  right: 20px;
+  width: 100%;
+  z-index: $z-index;
+  background: $primary-color;
+}
+
+.phant-chat-app-container {
+  position: fixed;
+  width: calc(100% - 40px);
+  max-width: 360px;
+  transform: rotateY(90deg);
+  transform-origin: 100% 100%;
+  border-radius: $border-radius-px $border-radius-px $border-radius-px
+    $border-radius-px;
+  bottom: 120px;
+  right: 20px;
+  transition: 0.1s;
+  display: flex;
+  flex-direction: column;
+  z-index: $z-index;
+  &.toggled {
+    box-shadow: 0 0 20px rgb(133, 133, 133);
+    transform: rotateY(0);
+    transition: 0.2s;
+  }
+}

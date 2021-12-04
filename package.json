@@ -1,0 +1,24 @@
+{
+  "name": "backend2",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsc public/integration/**/*.ts --target es2016 --module commonjs --esModuleInterop true --forceConsistentCasingInFileNames true --strict true --skipLibCheck true && node-sass public/integration -o public/integration && next dev",
+    "build": "tsc public/integration/**/*.ts --target es2016 --module commonjs --esModuleInterop true --forceConsistentCasingInFileNames true --strict true --skipLibCheck true && node-sass public/integration -o public/integration && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "handlebars-loader": "^1.7.1",
+    "next": "12.0.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.4",
+    "node-sass": "^6.0.1",
+    "typescript": "^4.5.2"
+  }
+}
