@@ -41,9 +41,16 @@
       }, 50);
       if (!isMobile()) {
         {
+          if (bubble.style.transform === 'rotateY(180deg)')
+            bubble.style.transform = 'rotateY(0)';
+          else bubble.style.transform = 'rotateY(180deg)';
           if (!chatContainer.classList.contains('toggled')) {
             chatContainer.classList.add('toggled');
-          } else chatContainer.classList.remove('toggled');
+            bubble.style.backgroundImage = "url('{{{backgroundBubbleClose}}}')";
+          } else {
+            chatContainer.classList.remove('toggled');
+            bubble.style.backgroundImage = "url('{{{backgroundBubbleImage}}}')";
+          }
         }
       }
     };

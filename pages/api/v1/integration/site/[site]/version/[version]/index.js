@@ -15,7 +15,8 @@ export default function handler(req, res) {
     site: req.query.site,
     chatAppUrl: environment.chatAppUrl,
     phantChatHTML: phantChatHTML,
-    backgroundBubbleImage: `${backendUrl}/images/chat.svg`,
+    backgroundBubbleImage: `${backendUrl}/images/phantBubbleUntoggled.svg`,
+    backgroundBubbleClose: `${backendUrl}/images/phantBubbleToggled.svg`,
   });
 
   res.send(javascript);
